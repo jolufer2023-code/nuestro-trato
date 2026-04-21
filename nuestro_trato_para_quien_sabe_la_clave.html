@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para quien sabe la clave</title>
+<style>
+body {
+  font-family: "Georgia", serif;
+  background: #f5f2eb;
+  color: #2f2f2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#container {
+  max-width: 720px;
+  padding: 50px;
+  background: white;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+  border-radius: 14px;
+  text-align: center;
+}
+
+h1 {
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+
+.intro {
+  font-size: 18px;
+  margin: 30px 0;
+  color: #555;
+}
+
+input {
+  font-size: 18px;
+  padding: 10px;
+  width: 180px;
+  text-align: center;
+  font-family: inherit;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 22px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+#error {
+  color: #8b1e1e;
+  margin-top: 18px;
+  font-style: italic;
+}
+
+#poem {
+  display: none;
+  text-align: left;
+  white-space: pre-line;
+  margin-top: 40px;
+}
+</style>
+</head>
+
+<body>
+<div id="container">
+
+  <h1>Para quien sabe la clave</h1>
+
+  <div class="intro">
+    No todo está hecho para ser leído de inmediato.<br>
+    Algunas palabras esperan<br>
+    a quien sabe cómo llegar.
+  </div>
+
+  <input type="password" id="key" placeholder="Clave">
+  <button onclick="checkKey()">Entrar</button>
+
+  <div id="error"></div>
+
+  <div id="poem">
+    <h2>Nuestro Trato</h2>
+    <p>
+Compañera, Isa,
+usted sabe que puede contar conmigo,
+no hasta dos o hasta diez,
+sino simplemente contar conmigo.
+
+Iniciamos con un café,
+un pretexto tibio para pausar la búsqueda,
+y desde entonces hemos sumado mapas:
+fuimos al campo, al cerro,
+conquistando distancias que antes eran soledad.
+
+Vivimos nuestras tardes de asados en la playa,
+donde el humo y la sal sellaron el encuentro
+de dos que se buscaron por mucho tiempo
+y por fin se hallaron frente al mar.
+
+Si alguna vez me encuentra huraño,
+o el silencio se vuelve un refugio necesario,
+no piense qué flojera;
+recuerde nuestras tardes de tragos y complicidad,
+donde las confesiones fluyeron sin prisa
+y las risas se multiplicaron hasta hacernos invencibles.
+
+Porque este amor adulto no es un accidente,
+es la estrategia de sabernos cerca.
+
+Hagamos, pues, el trato definitivo:
+yo quiero contar con usted,
+para saber, a ciencia cierta,
+que usted sabe que puede
+contar conmigo.
+    </p>
+  </div>
+
+</div>
+
+<script>
+function checkKey() {
+  const key = document.getElementById("key").value;
+
+  if (key === "110924") {
+    document.getElementById("poem").style.display = "block";
+    document.getElementById("error").innerText = "";
+  } else {
+    document.getElementById("error").innerText =
+      "No es la clave. Algunas cosas solo se abren desde el lugar correcto.";
+  }
+}
+</script>
+</body>
+</html>
